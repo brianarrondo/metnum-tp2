@@ -1,0 +1,14 @@
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/install/local.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/rebuild_cache.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/metnum.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/edit_cache.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/install/strip.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/install.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/tp2.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/CMakeFiles/list_install_components.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/pybind11/CMakeFiles/install/local.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/pybind11/CMakeFiles/install/strip.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/pybind11/CMakeFiles/install.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/pybind11/CMakeFiles/list_install_components.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/pybind11/CMakeFiles/rebuild_cache.dir
+/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/build/pybind11/CMakeFiles/edit_cache.dir

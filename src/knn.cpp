@@ -2,16 +2,23 @@
 //#include <chrono>
 #include <iostream>
 #include "knn.h"
+#include "pca.h"
 
 using namespace std;
 
 
 KNNClassifier::KNNClassifier(unsigned int n_neighbors)
 {
+	neighbors = n_neighbors;
 }
 
 void KNNClassifier::fit(Matrix X, Matrix y)
 {
+	// Hago un cambio de base en las matrices X e Y, quedandome las primeras n componentes
+	unsigned int n_components = 25;
+	auto pca = PCA(n_components);
+	pca.fit(X);
+	pca.fit(y);
 }
 
 

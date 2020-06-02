@@ -9,4 +9,5 @@ public:
 
     Eigen::MatrixXd transform(Matrix X);
 private:
+	unsigned int n_main_components;
 };

@@ -11,4 +11,5 @@ public:
 
     Vector predict(Matrix X);
 private:
+	unsigned int neighbors;
 };
