@@ -5,11 +5,12 @@
 
 class KNNClassifier {
 public:
-    KNNClassifier(unsigned int n_neighbors);
+    KNNClassifier(unsigned int n_neighbors, bool with_pca);
 
     void fit(Matrix X, Matrix y);
 
     Vector predict(Matrix X);
 private:
-	unsigned int neighbors;
+	unsigned int n_neighbors;
+	bool with_pca;
 };

@@ -1,1 +1,0 @@
-/Users/desarrollo/Metodos Numericos/TP2/metnum-tp2/notebooks/metnum.cpython-37m-darwin.so

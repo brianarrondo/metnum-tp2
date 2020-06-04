@@ -3,11 +3,11 @@
 
 class PCA {
 public:
-    PCA(unsigned int n_components);
+    PCA(unsigned int components);
 
     void fit(Matrix X);
 
     Eigen::MatrixXd transform(Matrix X);
 private:
-	unsigned int n_main_components;
+    unsigned int n_components;
 };
