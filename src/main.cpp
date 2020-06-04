@@ -40,7 +40,7 @@ Matrix read_csv_to_matrix(string input_csv) {
 	unsigned int index = 0;
 
 	getline(file, line);
-	vector<vector<double>> M(42000);
+
 	while (!file.eof()) {
 		getline(file, line);
 
