@@ -3,30 +3,19 @@
 #include <iostream>
 #include <utility>
 #include "knn.h"
-#include "pca.h"
 
 using namespace std;
 
 
-KNNClassifier::KNNClassifier(unsigned int neighbors, bool pca)
+KNNClassifier::KNNClassifier(unsigned int neighbors)
 {
     n_neighbors = neighbors;
-    with_pca = pca;
 }
 
 void KNNClassifier::fit(Matrix X, Matrix y)
 {
-
     X_train = X;
     y_train = y;
-
-/*
-    // Hago un cambio de base en las matrices X e Y, quedandome las primeras n componentes
-    unsigned int components = 25;
-    auto pca = PCA(components);
-    pca.fit(X);
-    pca.fit(y);
-*/
 }
 
 Vector KNNClassifier::predict(Matrix X)
