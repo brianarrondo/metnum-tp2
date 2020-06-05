@@ -36,19 +36,37 @@ Vector KNNClassifier::predict(Matrix X)
 
     for (unsigned k = 0; k < X.rows(); ++k)
     {
-        Vector x = X.row(k);
+        Vector x = X.row(k).transpose();
 
-        ret(k) = 0;
-        auto min_distance = (x - X_train.row(0)).norm();
+        vector<pair<int, double>> digit_distances;
 
-        for (unsigned i = 1; i < X_train.rows(); ++i)
+        for (unsigned i = 0; i < X_train.rows(); ++i)
         {
-            auto distance = (x - X_train.row(i)).norm();
-            if (distance < min_distance) {
-                ret(k) = y_train.row(i)[0];
-                min_distance = distance;
-            }
+            int digit = y_train.row(i)[0];
+            auto distance = (x - X_train.row(i).transpose()).norm();
+
+            digit_distances.emplace_back(digit, distance);
         }
+
+        // Ordeno los digitos por distancia
+        std::sort(digit_distances.begin(), digit_distances.end(), [](const std::pair<int, double> &left, const std::pair<int, double> &right) {
+            return left.second < right.second;
+        });
+
+        // Me quedo con los n_neighbors mas cercanos
+        digit_distances.erase(digit_distances.begin() + n_neighbors, digit_distances.end());
+
+        // Votacion
+        vector<int> vote(10);
+        for (unsigned n = 0; n < n_neighbors; ++n)
+        {
+            vote[digit_distances[n].first] = vote[digit_distances[n].first] + 1;
+        }
+
+        // Indice del elemento mas grande, osea, con mas votos
+        int maxElementIndex = std::max_element(vote.begin(), vote.end()) - vote.begin();
+
+        ret(k) = maxElementIndex;
     }
 
     return ret;
