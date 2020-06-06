@@ -41,7 +41,7 @@ pair<Vector, Matrix> get_first_eigenvalues(const Matrix& X, unsigned num, unsign
     for (int i = 0; i < num; ++i)
     {
         // Obtengo un autovalor y autovector de X
-        pair<double, Vector> eigen_value_vector = power_iteration(A);
+        pair<double, Vector> eigen_value_vector = power_iteration(A, num_iter, epsilon);
         double eigen_value = eigen_value_vector.first;
         Vector eigen_vector = eigen_value_vector.second;
 

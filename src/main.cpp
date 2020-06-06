@@ -109,9 +109,10 @@ Vector get_first_column(Matrix X) {
 void print_csv_output(Vector V, string output_file) {
     FILE *fp = fopen(output_file.c_str(), "w");
 
+    fprintf(fp, "ImageId,Label\n");
     if (fp != NULL) {
         for(int i = 0; i < V.rows(); i++){
-            fprintf(fp, "%f\n", V[i]);
+            fprintf(fp, "%u,%f\n", i, V[i]);
         }
     } else {
         cout << "Error al abrir el archivo: " << output_file << endl;
