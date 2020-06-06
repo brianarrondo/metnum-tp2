@@ -106,6 +106,21 @@ Vector get_first_column(Matrix X) {
     return X.col(0);
 }
 
+void print_csv_output(Vector V, string output_file) {
+    FILE *fp = fopen(output_file.c_str(), "w");
+
+    if (fp != NULL) {
+        for(int i = 0; i < V.rows(); i++){
+            fprintf(fp, "%f\n", V[i]);
+        }
+    } else {
+        cout << "Error al abrir el archivo: " << output_file << endl;
+        exit(1);
+    }
+
+    fclose(fp);
+}
+
 int main(int argc, char** argv) {
 
     auto t0 = clock();
@@ -130,10 +145,11 @@ int main(int argc, char** argv) {
 
     int neighbors = 10;
     int components = 10;
+    Vector predict;
     if (method == "0") {
         auto knn = KNNClassifier(neighbors);
         knn.fit(X_train, y_train);
-        Vector predict = knn.predict(test_set);
+        predict = knn.predict(test_set);
 
         cout << "Knn params: " << endl;
         cout << "   - Neighbors: " << neighbors << endl;
@@ -158,7 +174,7 @@ int main(int argc, char** argv) {
         knn.fit(X_train_transformed, y_train);
         Matrix test_set_transformed = pca.transform(test_set);
 
-        Vector predict = knn.predict(test_set_transformed);
+        predict = knn.predict(test_set_transformed);
 
         cout << "PCA + Knn params: " << endl;
         cout << "   - Neighbors: " << neighbors << endl;
@@ -177,6 +193,8 @@ int main(int argc, char** argv) {
     } else {
         cout << "Method ID invalid. Use 0 (Knn) or 1 (PCA + Knn)." << endl;
     }
+
+    print_csv_output(predict, classif);
 
     return 0;
 }
