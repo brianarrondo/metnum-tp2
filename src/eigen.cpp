@@ -13,8 +13,14 @@ pair<double, Vector> power_iteration(const Matrix& X, unsigned num_iter, double 
 
     for (int i = 0; i < num_iter; ++i)
     {
+        Vector b_old = b;
         Vector Xb = X * b;
         b = Xb / Xb.norm();
+
+        double cos_angle = b.dot(b_old);
+        if ((1 - eps) < cos_angle && cos_angle <= 1) {
+            i = num_iter;
+        }
     }
 
     Vector Xb = X * b;
