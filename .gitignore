@@ -56,3 +56,4 @@ dkms.conf
 /build
 /notebooks/.ipynb_checkpoints
 .DS_Store
+/notebooks/tests_csv/.ipynb_checkpoints/
