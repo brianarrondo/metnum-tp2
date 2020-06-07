@@ -16,7 +16,7 @@ void PCA::fit(Matrix X)
     Matrix cov_matrix = (A.adjoint() * A) / double(X.rows() - 1);
 
     // A partir de la matriz de covarianza, obtengo los primeros n autovectores y autovalores
-    pair<Vector, Matrix> eigen_values_vectors = get_first_eigenvalues(cov_matrix, n_components);
+    pair<Vector, Matrix> eigen_values_vectors = get_first_eigenvalues(cov_matrix, n_components, 5000, 1e-16);
 
     // Me guardo los autovectores de la tupla
     eigen_vectors = eigen_values_vectors.second;
