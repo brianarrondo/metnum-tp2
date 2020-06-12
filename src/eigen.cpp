@@ -28,7 +28,7 @@ pair<double, Vector> power_iteration(const Matrix& X, unsigned num_iter, double 
     // Calculamos el autovalor correspondiente al autovector
     eigenvalue = (double) (b.transpose() * Xb) / (b.squaredNorm());
 
-    // Retornamos el autovalor y el autovector normalizado (No entiendo porque devolver b normalizado)
+    // Retornamos el autovalor y el autovector normalizado
     return make_pair(eigenvalue, b / b.norm());
 }
 
