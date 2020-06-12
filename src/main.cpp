@@ -144,8 +144,8 @@ int main(int argc, char** argv) {
     Matrix y_train = get_first_column(train_set);
     Matrix X_train = remove_first_column(train_set);
 
-    int neighbors = 10;
-    int components = 10;
+    int neighbors = 5;
+    int components = 30;
     Vector predict;
     if (method == "0") {
         auto knn = KNNClassifier(neighbors);
