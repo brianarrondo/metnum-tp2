@@ -49,7 +49,7 @@ pair<Vector, Matrix> get_first_eigenvalues(const Matrix& X, unsigned num, unsign
         eigvalues[i] = eigen_value;
         eigvectors.col(i) = eigen_vector;
 
-        // Reinterpreto A
+        // Reinterpreto A (deflacion)
         A = A - (eigen_value * (eigen_vector * eigen_vector.transpose()));
     }
 
